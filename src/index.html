@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Hover Car Test</title>
+        <link rel="stylesheet" href="./style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+		<style>
+			#loadingOverlay {
+			display: flex;
+            justify-content: center;
+			font-family: 'Micro 5', sans-serif;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            font-size: 100px;
+            z-index: 10;
+			flex-direction: column;
+			}
+			.spinner {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3b3b3b;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="loadingOverlay">
+		Loading
+		<div class="spinner"></div>
+    </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "../build/three.module.js",
+                "three/addons/": "./jsm/",
+                "three/nodes": "./jsm/nodes/Nodes.js"
+            }
+        }
+    </script>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
